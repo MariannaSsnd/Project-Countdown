@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8">
+  <title>Countdown Website</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Background -->
+<!-- Background Image -->
+<img src="images/background.png" alt="" id="bgImage">
+
+
+<header class="intro">
+  <h1>WEBSITE IS ALMOST READY</h1>
+  <h4>
+    Our website is under construction. We'll be here soon with our new awesome.
+    <br>
+    Subscribe to be notified.
+  </h4>
+</header>
+
+<!-- Countdown -->
+<div id="countdown">
+  <div class="time-box">
+    <div class="number" id="days">0</div>
+    <div class="label">Days</div>
+  </div>
+  <div class="time-box">
+    <div class="number" id="hours">0</div>
+    <div class="label">Hours</div>
+  </div>
+  <div class="time-box">
+    <div class="number" id="minutes">0</div>
+    <div class="label">Minutes</div>
+  </div>
+  <div class="time-box">
+    <div class="number" id="seconds">0</div>
+    <div class="label">Seconds</div>
+  </div>
+</div>
+
+
+<!-- Navigation -->
+<nav>
+  <ul class="nav-list">
+    <li><button id="homeBtn">HOME</button></li>
+    <li><button id="subscribeBtn">SUBSCRIBE NOW</button></li>
+    <li><button id="contactBtn">CONTACT US</button></li>
+  </ul>
+</nav>
+
+<!-- Subscribe Modal -->
+<div class="modal hidden" id="subscribeModal">
+  <div class="modal-content">
+    <span class="close" id="closeSubscribe">&times;</span>
+    <h2>Subscribe to our Newsletter</h2>
+    
+    <form id="subscribeForm" action="MAILCHIMP_FORM_ACTION_URL" method="post" target="_blank" novalidate>
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="EMAIL" required>
+      </div>
+      <button type="submit">Subscribe</button>
+    </form>
+  </div>
+</div>
+
+
+<!-- Contact Modal -->
+<div class="modal hidden" id="contactModal">
+  <div class="modal-content">
+    <span class="close" id="closeContact">&times;</span>
+    <h2>Contact Us</h2>
+    
+    <form id="contactForm" novalidate>
+      <div class="form-grid">
+        
+        <!-- Αριστερή στήλη -->
+        <div class="form-group"><label>Όνομα</label><input type="text" id="a1"></div>
+        <div class="form-group"><label>Οικ. Κατάσταση</label><select id="a7"><option>Άγαμος</option><option>Έγγαμος</option></select></div>
+        <div class="form-group"><label>Επώνυμο</label><input type="text" id="a3"></div>
+        <div class="form-group"><label>Απόφοιτος</label><select id="a15"><option>Γυμνάσιο</option><option>Λύκειο</option><option>ΑΤΕΙ</option><option>ΑΕΙ</option></select></div>
+        <div class="form-group"><label>Χρονολογία Γέννησης</label><input type="date" id="a9"></div>
+        <div class="form-group"><label>Αριθμός Τέκνων</label><input type="number" id="a8" min="0" step="1" placeholder="Μόνο αριθμοί"></div>
+        <div class="form-group"><label>Πόλη</label><input type="text" id="a6"></div>
+        <div class="form-group"><label>Στρατιωτικές Υποχρεώσεις</label><select id="a11"><option>Ναι</option><option>Όχι</option></select></div>
+
+        <!-- Δεξιά στήλη -->
+        <div class="form-group"><label>Περιοχή</label><input type="text" id="a5"></div>
+        <div class="form-group"><label>Έτος Απολ. Στρατού</label><input type="date" id="a12"></div>
+        <div class="form-group"><label>Οδός</label><input type="text" id="a2"></div>
+        <div class="form-group"><label>Δάνειο</label><input type="text" id="a14"></div>
+        <div class="form-group"><label>Αριθμός</label><input type="number" id="a4" min="0" step="1" placeholder="Μόνο αριθμοί"></div>
+        <div class="form-group"><label>Πιστωτικές Κάρτες</label><input type="text" id="a13"></div>
+        <div class="form-group"><label>Φύλο</label><select id="a10"><option>Άνδρας</option><option>Γυναίκα</option></select></div>
+        <div class="form-group"><label>Τέκνα</label><input type="text" id="a16"></div></div><button type="submit">Αποστολή</button>
+    </form>
+  </div>
+</div>
+
+
+
+<!-- Footer & Social Icons -->
+<div class="social-icons">
+  <div class="social-icon"><i class="fab fa-facebook-f"></i></div>
+  <div class="social-icon"><i class="fab fa-twitter"></i></div>
+  <div class="social-icon"><i class="fab fa-google-plus-g"></i></div>
+  <div class="social-icon"><i class="fab fa-linkedin-in"></i></div>
+  <div class="social-icon"><i class="fab fa-instagram"></i></div>
+</div>
+
+<footer class="footer">
+  <p>© Designed by <span>RAPPY</span> and developed by <span>THEMETURN</span></p>
+  <p>Copyright reserved to both. 2015</p>
+</footer>
+
+<script src="js/countdown.js"></script>
+</body>
+
+</html>
+

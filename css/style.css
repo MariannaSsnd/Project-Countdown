@@ -1,0 +1,288 @@
+/* =================== BODY =================== */
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  /* αφαιρούμε το background-image γιατί έχουμε video */
+}
+
+/* =================== BACKGROUND =================== */
+#bgImage {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+/* =================== INTRO HEADER =================== */
+.intro {
+  min-height: 20vh; /* μεγαλύτερο ύψος για απόσταση από πάνω */
+  display: grid;
+  place-items: center;
+  text-align: center;
+  color: #8beaea;
+  position: relative; /* για να εμφανίζεται πάνω από το video */
+  z-index: 1;
+}
+
+.intro h1 {
+  font-size: clamp(45px, 6vw, 80px); /* επικεφαλίδα */
+  font-weight: 600;
+  margin-top: 130px; /* απόσταση από πάνω */
+  margin-bottom: 2px; /* απόσταση προς h4 */
+}
+
+.intro h4 {
+  font-weight: 300;
+  line-height: 1.6;
+  color: #7d9795;
+}
+
+/* =================== COUNTDOWN =================== */
+#countdown {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+#countdown > div {
+  padding: 0 60px; /* απόσταση ανάμεσα στα blocks */
+  position: relative;
+}
+
+#countdown > div:not(:first-child)::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 1.5px; /* πάχος γραμμής */
+  background-color: #000;
+}
+
+.time-box {
+  display: flex;
+  flex-direction: column; /* αριθμός πάνω, label κάτω */
+  align-items: center;
+  margin-top: 40px;
+}
+
+.number {
+  font-size: 5rem; /* μεγαλύτερα νούμερα */
+  font-weight: 600;
+  color: #e5ebea;
+}
+
+.label {
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  margin-top: 5px;
+}
+
+/* =================== NAVIGATION =================== */
+nav {
+  margin-top: 40px;
+  text-align: center;
+  padding: 10px 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-list li a,
+.nav-list li button {
+  color: #050505;
+  text-decoration: none;
+  background: none;
+  border: 2px solid #5c7f7c;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 0 16px;
+  border-radius: 5px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  line-height: 23;
+  transition: transform 0.2s ease;
+}
+
+.nav-list li a:hover,
+.nav-list li button:hover {
+  color: black;
+  transform: scale(1.1);
+}
+
+
+/* Subscribe
+ */
+.modal {
+  display: none; /* Κρύβεται αρχικά */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  max-width: 500px;
+  width: 90%;
+  position: relative;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: #20b2aa;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #24b0a9;
+}
+
+/* Contact Us */
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* δύο στήλες */
+  gap: 15px;
+}
+
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+input, select {
+  width: 100%;
+  height: 40px;
+  padding: 6px 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+};
+
+textarea {
+  height: 40px;
+  resize: none;
+}
+
+/* Responsive για μικρές οθόνες */
+@media (max-width: 600px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+
+
+
+.hidden {
+  display: none;
+}
+
+.error {
+  color: red;
+  font-size: 12px;
+}
+
+/* =================== SOCIAL ICONS =================== */
+.social-icons {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  gap: 30px; /* μεγαλύτερη απόσταση */
+  position: relative;
+  z-index: 1;
+}
+
+.social-icon {
+  width: 48px;
+  height: 48px;
+  border: 2px solid #5c7f7c;
+
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: margin-right 2s, color 1s;
+}
+
+.social-icon i {
+  font-size: 22px;
+}
+
+.social-icon:hover {
+  background-color: #8beaea;
+  color: white;
+  border-color: #20b2aa;
+  transform: scale(1.15);
+}
+
+/* =================== FOOTER =================== */
+.footer {
+  margin-top: 40px;
+  text-align: center;
+  font-size: 0.8rem;
+  color: #5c7f7c;
+  position: relative;
+  z-index: 1;
+}
+
+.footer p {
+  margin: 5px 0;
+}
+
+.footer span {
+  color: #7fcfc9; /* ίδιο χρώμα με countdown */
+  font-weight: 600;
+}
+
+/* =================== ANIMATION =================== */
+@keyframes slideDown {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
